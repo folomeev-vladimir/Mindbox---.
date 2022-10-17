@@ -1,0 +1,17 @@
+import random
+from collections import Counter
+
+# Функция №1
+def customers_counter(n_customers):
+    customers_list = [ random.randint(1, 10000000) for i in range(n_customers) ]
+    group_counts = [ sum([ int(c) for c in str(customer) ]) for customer in customers_list ]
+    return Counter(group_counts)
+    
+# Функция №2
+def customers_counter_id(n_customers, n_first_id):
+    customers_list = [ random.randint(1, 1000000) for i in range(n_customers) ]
+    group_counts =  [ n_first_id + sum([ int(c) for c in str(customer) ]) for customer in customers_list ]
+    return Counter(group_counts)
+    
+    
+
